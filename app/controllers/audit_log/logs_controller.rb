@@ -16,6 +16,11 @@ module AuditLog
 
     def show; end
 
+    def destroy
+      @log.destroy
+      redirect_to logs_path, notice: "Audit log deleted."
+    end
+
     private
 
     # Use callbacks to share common setup or constraints between actions.
